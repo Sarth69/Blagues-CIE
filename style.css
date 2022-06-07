@@ -5,15 +5,63 @@ h1 {
 p {
   margin-left: 10px;
 }
-#buttons {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10%;
+
+.accordion {
+  width: 80%;
+  margin: 40px auto;
 }
-.btn {
+.accordion-body {
+  color: white;
+}
+.accordion-button {
+  color: white !important;
+}
+.accordion-button:focus {
+  border-color: #ffc107 !important;
+  box-shadow: 0 0 0 0.25rem #ffc107 !important;
+}
+
+@media screen and (min-width: 700px) {
+  #buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10%;
+  }
+  #buttons button {
+    margin-top: 10px;
+  }
+}
+
+.card {
+  width: 80%;
+  margin: auto;
+}
+.card-header {
+  background-color: #ffc107 !important;
+}
+
+.home-btn {
   height: 100px;
   width: 200px;
 }
-.navbar {
-  background-color: #e29b1e;
+.navbar,
+.custom-bg {
+  background-color: #e29b1e !important;
+}
+.nav-link {
+  color: black !important;
+}
+#random-button {
+  display: flex;
+  justify-content: center;
 }
