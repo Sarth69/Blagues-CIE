@@ -73,3 +73,10 @@ p {
   display: flex;
   justify-content: center;
 }
+.vdm {
+  background-color: #e29b1e;
+  border-radius: 0.375rem;
+  width: 80%;
+  margin: 5px auto 20px auto;
+  padding: 5px;
+}
