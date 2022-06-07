@@ -75,7 +75,7 @@
           </ul>
         </div>
         <div class="card-body">
-          <div class="accordion" id="blague">
+          <div class="accordion" id="allBlagues">
             <div class="accordion-item bg-warning">
               <h2 class="accordion-header" id="headingOne">
                 <button
@@ -93,16 +93,70 @@
                 id="collapseOne"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingOne"
-                data-bs-parent="#blague"
+                data-bs-parent="#allBlagues"
               >
                 <div class="accordion-body">Deezer</div>
               </div>
             </div>
+            <div class="accordion-item bg-warning">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed custom-bg"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseOne"
+                >
+                  Où partent les développeurs en vacances ?
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#allBlagues"
+              >
+                <div class="accordion-body">Au C-Shell</div>
+              </div>
+            </div>
+            <div class="accordion-item bg-warning">
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button collapsed custom-bg"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseOne"
+                >
+                  Un développeur ne descend pas du métro.
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#allBlagues"
+              >
+                <div class="accordion-body">Il libère la RAM...</div>
+              </div>
+            </div>
           </div>
-          <div id="random-button">
-            <button type="button" class="btn btn-warning">
-              Générer une autre blague
-            </button>
+          <div aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link">Previous</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
