@@ -32,37 +32,53 @@ let fetchAllJokes = async (minId, maxId) => {
   divWhereWeAddTheJokes = document.getElementById("allBlagues");
   jokesIds = [...Array(maxId + 1 - minId).keys()].map((e) => e + minId);
   console.log(jokesIds);
-  (await Promise.all(jokesIds.map(async (id) => await blagues.fromId(id)))).map(
-    (blague) => {
-      divWhereWeAddTheJokes.insertAdjacentHTML(
-        "beforeend",
-        `<div class="accordion-item bg-warning">
-        <h2 class="accordion-header" id="headingOne">
+  (
+    await Promise.all(
+      jokesIds.map(async (id) => {
+        return { blague: await blagues.fromId(id), id };
+      })
+    )
+  ).map((res) => {
+    let blague = res.blague;
+    let id = res.id;
+    divWhereWeAddTheJokes.insertAdjacentHTML(
+      "beforeend",
+      `<div class="accordion-item bg-warning">
+        <h2 class="accordion-header" id="heading` +
+        id +
+        `">
         <button
             class="accordion-button collapsed custom-bg"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#collapseOne"
+            data-bs-target="#collapse` +
+        id +
+        `"
             aria-expanded="false"
-            aria-controls="collapseOne"
+            aria-controls="collapse` +
+        id +
+        `"
         >` +
-          blague.joke +
-          `</button>
+        blague.joke +
+        `</button>
         </h2>
         <div
-        id="collapseOne"
+        id="collapse` +
+        id +
+        `"
         class="accordion-collapse collapse"
-        aria-labelledby="headingOne"
+        aria-labelledby="heading` +
+        id +
+        `"
         data-bs-parent="#allBlagues"
         >
         <div class="accordion-body">` +
-          blague.answer +
-          `</div>
+        blague.answer +
+        `</div>
         </div>
     </div>`
-      );
-    }
-  );
+    );
+  });
 };
 
 let deleteJokes = () => {
