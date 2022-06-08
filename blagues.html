@@ -14,8 +14,10 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/blagues-api@2.1.0/dist/blagues-api.umd.js"></script>
+    <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="fetchRandomJoke(); onRandomLoad();">
     <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
@@ -108,7 +110,5 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <script src="https://unpkg.com/blagues-api@2.1.0/dist/blagues-api.umd.js"></script>
-    <script src="script.js"></script>
   </body>
 </html>
