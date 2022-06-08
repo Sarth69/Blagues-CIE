@@ -76,14 +76,13 @@
               <h2 class="accordion-header" id="headingOne">
                 <button
                   class="accordion-button collapsed custom-bg"
+                  id="randomJoke"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseOne"
                   aria-expanded="false"
                   aria-controls="collapseOne"
-                >
-                  Quelle est la meilleure heure pour écouter de la musique ?
-                </button>
+                ></button>
               </h2>
               <div
                 id="collapseOne"
@@ -91,12 +90,12 @@
                 aria-labelledby="headingOne"
                 data-bs-parent="#blague"
               >
-                <div class="accordion-body">Deezer</div>
+                <div class="accordion-body" id="randomAnswer"></div>
               </div>
             </div>
           </div>
           <div id="random-button">
-            <button type="button" class="btn btn-warning">
+            <button type="button" class="btn btn-warning" id="newRandom">
               Générer une autre blague
             </button>
           </div>
@@ -109,5 +108,7 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/blagues-api@2.1.0/dist/blagues-api.umd.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
