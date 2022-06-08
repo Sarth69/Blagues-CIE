@@ -14,8 +14,9 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <script src="scripts/vdm.js"></script>
   </head>
-  <body>
+  <body onload="fetchAllVDM();">
     <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
@@ -51,7 +52,7 @@
       <div class="card">
         <div class="card-body">
           <div class="vdm">
-            <p>
+            <p id="vdm-text">
               Aujourd'hui au restaurant, la serveuse apporte à ma fille sa
               cocotte de moules marinières. Ma fille : "Oh mais c'est pas
               possible, elles sont toutes vides." Je regarde, on lui avait servi
@@ -59,7 +60,11 @@
             </p>
           </div>
           <div id="random-button">
-            <button type="button" class="btn btn-warning">
+            <button
+              type="button"
+              class="btn btn-warning"
+              onclick="displayARandomVDM()"
+            >
               Générer une autre VDM
             </button>
           </div>
