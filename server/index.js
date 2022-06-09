@@ -10,6 +10,10 @@ app.use(cors({
     origin: 'file:///C:/Users/louis/Blagues-CIE'
 }));
 
+app.get('',(req,res)=>{
+    res.send('Bonjour ! C moi');
+})
+
 app.get('/like',(req,res) => {
     res.send("un like de plus !");
 });
