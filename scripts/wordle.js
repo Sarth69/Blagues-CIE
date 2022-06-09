@@ -45,8 +45,14 @@ let letterInput = (e) => {
       // We check that it is in the dictionnary
       guess = guesses[currentLine];
       if (dict.includes(guess)) {
+        // We hide the "invalid word" text
+        document.getElementById("invalidWord").setAttribute("style", "display: none");
         // We check if he got the right answer
         if (wordToGuess == guess) {
+          for (let i=0;i<6;i++) {
+              let caseActuelle = document.getElementsByClassName(`wordleLetter-${i}-${currentLine}`)[0];
+            caseActuelle.setAttribute("class", caseActuelle.className + " background-green");
+          }
           console.log("Win !")
           document.getElementById("win").removeAttribute("style")
         } else {
@@ -83,8 +89,14 @@ let letterInput = (e) => {
               let caseActuelle = document.getElementsByClassName(`wordleLetter-${i}-${currentLine}`)[0];
               caseActuelle.removeAttribute('disabled');
             }
+            // We set the focus on the first element of the next line
+            let prochaineCase = document.getElementsByClassName(`wordleLetter-${0}-${currentLine}`)[0];
+              prochaineCase.focus();
           }
         }
+      } else {
+        // The word is invalid
+        document.getElementById("invalidWord").removeAttribute("style");
       }
     }
   }
@@ -109,8 +121,9 @@ let onWordleLoad = async () => {
     let line = document.getElementsByClassName("wordleLetter-" + i + "-" + j)[0];
     line.addEventListener("keyup", (e) => letterInput(e));
   } }
-  document.getElementById("lose").setAttribute("style", "display: none")
-  document.getElementById("win").setAttribute("style", "display: none")
+  document.getElementById("lose").setAttribute("style", "display: none");
+  document.getElementById("win").setAttribute("style", "display: none");
+  document.getElementById("invalidWord").setAttribute("style","display: none");
   dict = await getDictionnary();
   // Choose the word to guess
   wordToGuess = dict[Math.floor(Math.random() * dict.length)];

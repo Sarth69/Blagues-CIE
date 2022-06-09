@@ -123,3 +123,9 @@ input[class*="wordleLetter-"] {
   color: #ffc107;
   margin: auto;
 }
+
+#invalidWord {
+  font-size:2em;
+  color: red;
+  margin: auto;
+}
