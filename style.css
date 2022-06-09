@@ -79,7 +79,8 @@ p {
 .page-link:focus {
   box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25) !important;
 }
-#random-button {
+#random-button,
+#start-game-button {
   display: flex;
   justify-content: center;
 }
@@ -94,4 +95,17 @@ p {
   margin: 5px auto 20px auto;
   padding: 5px;
   color: white !important;
+}
+div[class^="wordleLine-"] {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+.wordleLines {
+  display: flex;
+  justify-content: center;
+}
+input[class^="wordleLetter-"],
+input[class*="wordleLetter-"] {
+  width: 3em !important;
 }
