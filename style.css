@@ -23,6 +23,7 @@ p {
 
 .btn {
   color: white !important;
+  margin: 5px;
 }
 @media screen and (min-width: 700px) {
   #buttons {
