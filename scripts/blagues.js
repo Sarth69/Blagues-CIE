@@ -5,6 +5,7 @@ const blagues = new BlaguesAPI(
 
 // Init the pagination
 let currentPage = 1;
+var id_blague;
 
 let fetchRandomJoke = async () => {
   let blague = await blagues.random();
@@ -12,6 +13,7 @@ let fetchRandomJoke = async () => {
   answerElement = document.getElementById("randomAnswer");
   jokeElement.innerText = blague.joke;
   answerElement.innerText = blague.answer;
+  id_blague = blague.id;
 };
 
 let onRandomLoad = () => {
@@ -117,3 +119,8 @@ let onAllJokesLoad = () => {
     }
   });
 };
+
+var add_like = () => {
+  console.log(id_blague);
+  fetch("http://localhost:8080/like?id="+id_blague).then(()=>{});
+}
